@@ -1,0 +1,82 @@
+<nav>
+    <h1>REO 777 PARADISE</h1>
+
+    <div class="menu">
+        <button onclick="showPage('page1')">Page 1</button>
+        <button onclick="showPage('page2')">Page 2</button>
+        <button onclick="showPage('page3')">Page 3</button>
+    </div>
+</nav>
+
+<div id="page1" class="page active">
+    <h2>Gojo Phantom Runner</h2>
+    <img src="YOUR_GOJO_IMAGE.png" width="300">
+    <p>Luxury Sports Collection</p>
+</div>
+
+<div id="page2" class="page">
+    <h2>Gojo Infinity Pro</h2>
+    <img src="YOUR_GOJO_IMAGE.png" width="300">
+    <p>Professional Running Series</p>
+</div>
+
+<div id="page3" class="page">
+    <h2>Gojo Domain Edition</h2>
+    <img src="YOUR_GOJO_IMAGE.png" width="300">
+    <p>Limited Edition Collection</p>
+</div>
+
+<script>
+function showPage(pageId){
+    document.querySelectorAll('.page').forEach(page=>{
+        page.classList.remove('active');
+    });
+    document.getElementById(pageId).classList.add('active');
+}
+</script>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#000,#111,#2b1d00);
+    color:white;
+    min-height:100vh;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+}
+
+h1{
+    color:#FFD700;
+    letter-spacing:3px;
+}
+
+.menu button{
+    padding:10px 20px;
+    margin-left:10px;
+    border:none;
+    border-radius:30px;
+    background:#FFD700;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.page{
+    display:none;
+    text-align:center;
+    padding:50px;
+}
+
+.active{
+    display:block;
+}
+
+.page img{
+    border-radius:20px;
+    box-shadow:0 0 30px rgba(255,215,0,0.4);
+}
